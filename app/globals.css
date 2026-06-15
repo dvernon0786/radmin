@@ -204,3 +204,22 @@ button {
   cursor: pointer;
 }
 .btn-ghost:hover { background: var(--surface-2); }
+
+.btn-ghost-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
+  padding: 15px 32px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-ghost-white:hover { background: rgba(255,255,255,0.14); }

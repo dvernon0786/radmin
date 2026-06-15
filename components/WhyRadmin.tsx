@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const DIFFERENTIATORS = [
   {
@@ -40,11 +41,11 @@ export default function WhyRadmin() {
               Any vendor can install Nextcloud. We bring years of open-source contribution, institutional knowledge, and a genuine commitment to the mission — not just the margin.
             </p>
             <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
-              <a href="#contact" className="btn-primary">Get in touch →</a>
-              <a href="#services" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.8)", padding: "13px 24px", borderRadius: "var(--radius-md)", fontSize: 15, fontWeight: 500, fontFamily: "var(--font-sans)", textDecoration: "none", border: "1px solid rgba(255,255,255,0.12)", transition: "background var(--transition-fast)" }}
+              <Link href="/contact" className="btn-primary">Get in touch →</Link>
+              <Link href="/services" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.8)", padding: "13px 24px", borderRadius: "var(--radius-md)", fontSize: 15, fontWeight: 500, fontFamily: "var(--font-sans)", textDecoration: "none", border: "1px solid rgba(255,255,255,0.12)", transition: "background var(--transition-fast)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
-              >Our services</a>
+              >Our services</Link>
             </div>
             <div style={{ marginTop: 48, paddingTop: 36, borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", gap: 36 }}>
               {[{ val: "10+", label: "years open-source experience" }, { val: "100%", label: "of clients retain us after year one" }].map((m) => (

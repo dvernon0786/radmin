@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const CLIENTS = [
   {
@@ -80,7 +81,7 @@ export default function WhoWeServe() {
 
         <div style={{ marginTop: 48, textAlign: "center" as const }}>
           <p style={{ fontSize: 16, color: "var(--muted)", fontFamily: "var(--font-sans)", marginBottom: 20 }}>Not sure if Radmin is the right fit for your organisation?</p>
-          <a href="#contact" className="btn-primary">Let&apos;s find out together →</a>
+          <Link href="/contact" className="btn-primary">Let&apos;s find out together →</Link>
         </div>
       </div>
 

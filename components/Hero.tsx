@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const STATS = [
   { stat: "100%", label: "Open-source stack" },
@@ -39,15 +40,15 @@ export default function Hero() {
             </p>
 
             <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap", alignItems: "center" }}>
-              <a href="#contact" className="btn-primary" style={{ fontSize: 16, padding: "15px 30px" }}>
+              <Link href="/contact" className="btn-primary" style={{ fontSize: 16, padding: "15px 30px" }}>
                 Talk to us
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
-              <a href="#services" className="btn-secondary" style={{ fontSize: 16, padding: "15px 30px" }}>
+              </Link>
+              <Link href="/services" className="btn-secondary" style={{ fontSize: 16, padding: "15px 30px" }}>
                 See what we offer
-              </a>
+              </Link>
             </div>
 
             <p style={{ marginTop: 24, fontSize: 13, color: "var(--muted)", fontFamily: "var(--font-sans)" }}>

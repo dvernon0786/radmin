@@ -1,32 +1,22 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Who we serve", href: "#who-we-serve" },
-  { label: "Why Radmin", href: "#why-radmin" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Case studies", href: "/case-studies" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 16);
-      const sectionIds = NAV_LINKS.map((l) => l.href.replace("#", ""));
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(`#${sectionIds[i]}`);
-          return;
-        }
-      }
-      setActive("");
-    };
+    const onScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -56,7 +46,7 @@ export default function Navbar() {
           className="container"
           style={{ height: 68, display: "flex", alignItems: "center", justifyContent: "space-between" }}
         >
-          <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }} aria-label="Radmin home">
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }} aria-label="Radmin home">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
               <rect width="28" height="28" rx="7" fill="var(--red)" />
               <rect x="8" y="7" width="4" height="14" rx="2" fill="white" />
@@ -66,43 +56,46 @@ export default function Navbar() {
             <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, color: "var(--foreground)", letterSpacing: "-0.5px" }}>
               Radmin
             </span>
-          </a>
+          </Link>
 
           <div style={{ display: "flex", alignItems: "center", gap: 4 }} className="nav-desktop">
-            {NAV_LINKS.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                style={{
-                  padding: "8px 14px",
-                  fontSize: 14,
-                  fontWeight: 500,
-                  color: active === l.href ? "var(--foreground)" : "var(--muted)",
-                  textDecoration: "none",
-                  borderRadius: "var(--radius-sm)",
-                  background: active === l.href ? "var(--surface-2)" : "transparent",
-                  transition: "color var(--transition-fast), background var(--transition-fast)",
-                  fontFamily: "var(--font-sans)",
-                }}
-                onMouseEnter={(e) => {
-                  if (active !== l.href) {
-                    e.currentTarget.style.color = "var(--foreground)";
-                    e.currentTarget.style.background = "var(--surface)";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (active !== l.href) {
-                    e.currentTarget.style.color = "var(--muted)";
-                    e.currentTarget.style.background = "transparent";
-                  }
-                }}
-              >
-                {l.label}
-              </a>
-            ))}
-            <a href="#contact" className="btn-primary" style={{ marginLeft: 8, padding: "9px 20px", fontSize: 14 }}>
+            {NAV_LINKS.map((l) => {
+              const isActive = pathname === l.href;
+              return (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  style={{
+                    padding: "8px 14px",
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: isActive ? "var(--foreground)" : "var(--muted)",
+                    textDecoration: "none",
+                    borderRadius: "var(--radius-sm)",
+                    background: isActive ? "var(--surface-2)" : "transparent",
+                    transition: "color var(--transition-fast), background var(--transition-fast)",
+                    fontFamily: "var(--font-sans)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = "var(--foreground)";
+                      e.currentTarget.style.background = "var(--surface)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = "var(--muted)";
+                      e.currentTarget.style.background = "transparent";
+                    }
+                  }}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
+            <Link href="/contact" className="btn-primary" style={{ marginLeft: 8, padding: "9px 20px", fontSize: 14 }}>
               Get in touch
-            </a>
+            </Link>
           </div>
 
           <button
@@ -141,7 +134,7 @@ export default function Navbar() {
         >
           <div style={{ padding: "12px 16px 20px" }}>
             {NAV_LINKS.map((l) => (
-              <a
+              <Link
                 key={l.label}
                 href={l.href}
                 onClick={closeMenu}
@@ -150,18 +143,18 @@ export default function Navbar() {
                   padding: "13px 12px",
                   fontSize: 16,
                   fontWeight: 500,
-                  color: active === l.href ? "var(--red)" : "var(--foreground)",
+                  color: pathname === l.href ? "var(--red)" : "var(--foreground)",
                   textDecoration: "none",
                   borderRadius: "var(--radius-sm)",
                   fontFamily: "var(--font-sans)",
                 }}
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
-            <a href="#contact" onClick={closeMenu} className="btn-primary" style={{ display: "flex", justifyContent: "center", marginTop: 8 }}>
+            <Link href="/contact" onClick={closeMenu} className="btn-primary" style={{ display: "flex", justifyContent: "center", marginTop: 8 }}>
               Get in touch
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

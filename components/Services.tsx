@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const SERVICES = [
   {
@@ -119,7 +120,7 @@ export default function Services() {
             <p style={{ fontSize: 17, fontWeight: 700, color: "#fff", fontFamily: "var(--font-display)", margin: "0 0 4px" }}>Not sure which service fits?</p>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-sans)", margin: 0 }}>We&apos;ll help you figure it out — no commitment required.</p>
           </div>
-          <a href="#contact" className="btn-primary">Talk to us →</a>
+          <Link href="/contact" className="btn-primary">Talk to us →</Link>
         </div>
       </div>
     </section>

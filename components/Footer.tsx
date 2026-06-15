@@ -1,12 +1,12 @@
 "use client";
+import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Who we serve", href: "#who-we-serve" },
-  { label: "Why Radmin", href: "#why-radmin" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Case studies", href: "/case-studies" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "start", marginBottom: 56 }} className="footer-top">
           <div>
-            <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }} aria-label="Radmin — back to top">
+            <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }} aria-label="Radmin — back to home">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                 <rect width="28" height="28" rx="7" fill="var(--red)" />
                 <rect x="8" y="7" width="4" height="14" rx="2" fill="white" />
@@ -24,7 +24,7 @@ export default function Footer() {
                 <rect x="14" y="15" width="6" height="6" rx="2" fill="white" opacity="0.6" />
               </svg>
               <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, color: "#fff", letterSpacing: "-0.5px" }}>Radmin</span>
-            </a>
+            </Link>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-sans)", lineHeight: 1.65, maxWidth: 220 }}>
               Managed open-source tools for institutions that take data sovereignty seriously.
             </p>
@@ -32,15 +32,15 @@ export default function Footer() {
 
           <nav aria-label="Footer navigation" style={{ display: "flex", flexWrap: "wrap", gap: "8px 32px", paddingTop: 4 }}>
             {NAV_LINKS.map((l) => (
-              <a key={l.label} href={l.href} style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", fontFamily: "var(--font-sans)", transition: "color var(--transition-fast)", whiteSpace: "nowrap" }}
+              <Link key={l.label} href={l.href} style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", fontFamily: "var(--font-sans)", transition: "color var(--transition-fast)", whiteSpace: "nowrap" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          <a href="#contact" className="btn-primary" style={{ fontSize: 14, padding: "11px 20px" }}>Get in touch</a>
+          <Link href="/contact" className="btn-primary" style={{ fontSize: 14, padding: "11px 20px" }}>Get in touch</Link>
         </div>
 
         <div aria-hidden="true" style={{ height: 1, background: "rgba(255,255,255,0.06)", marginBottom: 28 }} />
