@@ -62,11 +62,36 @@ export const SERVICES: Service[] = [
     ],
   },
   {
+    name: "OpenDesk",
+    tagline: "A complete digital workplace — fully open-source.",
+    description:
+      "OpenDesk bundles email, calendar, video conferencing, project management, and document collaboration into a single integrated platform. One deployment replaces half a dozen proprietary tools.",
+    features: [
+      "Integrated email & calendar",
+      "Video conferencing",
+      "Real-time document collaboration",
+      "Project & task management",
+      "Unified admin dashboard",
+    ],
+    icon: null,
+    badge: null,
+    accent: false,
+    longDescription:
+      "OpenDesk is an open-source digital workplace platform that brings together the essential tools organisations use every day — email, calendars, video calls, document editing, project boards, and file sharing — into a single, coherent experience. Instead of stitching together six separate tools, your team gets one platform with a unified interface and centralised administration. We deploy, configure, and maintain the full stack so your IT team doesn't have to.",
+    useCases: [
+      "Replacing Microsoft 365 or Google Workspace with a single platform",
+      "Organisations wanting a unified digital workplace without vendor lock-in",
+      "Teams needing integrated video, docs, and project management",
+      "Institutions with strict data residency requirements",
+    ],
+  },
+  {
     name: "Custom deployment",
     tagline: "If it's open-source, we can run it.",
     description:
-      "Nextcloud and Vaultwarden are our flagship tools, but we can deploy almost any open-source application your organisation needs. Tell us what problem you're trying to solve and we'll find the right tool.",
+      "Nextcloud and Vaultwarden are our flagship tools, but we can deploy almost any open-source application your organisation needs. Any application maintained by Co-op Cloud can be deployed out of the box.",
     features: [
+      "Co-op Cloud app catalogue",
       "Custom app deployment",
       "Tool assessment & selection",
       "Full data migration support",
@@ -77,8 +102,9 @@ export const SERVICES: Service[] = [
     badge: null,
     accent: false,
     longDescription:
-      "The open-source ecosystem is vast. Beyond Nextcloud and Vaultwarden, we've deployed project management tools, internal wikis, customer relationship managers, mail servers, and sector-specific platforms for clients. If there's a proprietary tool your organisation depends on, there's a good chance an open-source equivalent exists — and we can run it. We start with a needs assessment, recommend the right tools, and handle everything from installation to ongoing maintenance.",
+      "The open-source ecosystem is vast. Beyond our flagship tools, we've deployed project management platforms, internal wikis, customer relationship managers, mail servers, and sector-specific software for clients. We're active contributors to the Co-op Cloud project — a free and open-source toolchain for deploying and managing open-source applications. Any of the 100+ applications in the Co-op Cloud catalogue can be deployed for your organisation with minimal lead time. We start with a needs assessment, recommend the right tools, and handle everything from installation to ongoing maintenance.",
     useCases: [
+      "Deploying any app from the Co-op Cloud catalogue",
       "Replacing Notion or Confluence with open-source wikis",
       "Self-hosted project management (Taiga, Plane, OpenProject)",
       "Open-source CRM for donor and beneficiary management",

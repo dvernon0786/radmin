@@ -21,6 +21,14 @@ const ICONS = [
     </svg>
   ),
   (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" key="opendesk">
+      <rect x="4" y="4" width="9" height="9" rx="2" fill="var(--red-light)" stroke="var(--red)" strokeWidth="1.5" />
+      <rect x="15" y="4" width="9" height="9" rx="2" fill="var(--red)" />
+      <rect x="4" y="15" width="9" height="9" rx="2" fill="var(--red)" />
+      <rect x="15" y="15" width="9" height="9" rx="2" fill="var(--red-light)" stroke="var(--red)" strokeWidth="1.5" />
+    </svg>
+  ),
+  (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" key="custom">
       <circle cx="14" cy="14" r="3" fill="var(--red)" />
       <circle cx="14" cy="14" r="8" stroke="var(--red)" strokeWidth="1.5" strokeDasharray="3 2" />

@@ -35,10 +35,26 @@ const SERVICES = [
     accent: false,
   },
   {
+    name: "OpenDesk",
+    tagline: "A complete digital workplace — fully open-source.",
+    description: "OpenDesk bundles email, calendar, video conferencing, project management, and document collaboration into a single integrated platform. One deployment replaces half a dozen proprietary tools.",
+    features: ["Integrated email & calendar", "Video conferencing", "Real-time document collaboration", "Project & task management", "Unified admin dashboard"],
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect x="4" y="4" width="9" height="9" rx="2" fill="var(--red-light)" stroke="var(--red)" strokeWidth="1.5" />
+        <rect x="15" y="4" width="9" height="9" rx="2" fill="var(--red)" />
+        <rect x="4" y="15" width="9" height="9" rx="2" fill="var(--red)" />
+        <rect x="15" y="15" width="9" height="9" rx="2" fill="var(--red-light)" stroke="var(--red)" strokeWidth="1.5" />
+      </svg>
+    ),
+    badge: null,
+    accent: false,
+  },
+  {
     name: "Custom deployment",
     tagline: "If it's open-source, we can run it.",
-    description: "Nextcloud and Vaultwarden are our flagship tools, but we can deploy almost any open-source application your organisation needs. Tell us what problem you're trying to solve and we'll find the right tool.",
-    features: ["Custom app deployment", "Tool assessment & selection", "Full data migration support", "Ongoing maintenance", "Staff onboarding"],
+    description: "Nextcloud and Vaultwarden are our flagship tools, but we can deploy almost any open-source application your organisation needs. Any application maintained by Co-op Cloud can be deployed out of the box.",
+    features: ["Co-op Cloud app catalogue", "Custom app deployment", "Tool assessment & selection", "Full data migration support", "Ongoing maintenance", "Staff onboarding"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <circle cx="14" cy="14" r="3" fill="var(--red)" />
@@ -67,7 +83,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }} role="list">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} role="list" className="services-grid">
           {SERVICES.map((service, i) => (
             <article
               key={service.name}
@@ -123,6 +139,10 @@ export default function Services() {
           <Link href="/contact" className="btn-primary">Talk to us →</Link>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
     </section>
   );
 }

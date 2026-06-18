@@ -29,10 +29,8 @@ export default function Hero() {
           <div aria-hidden="true" style={{ width: 4, minHeight: 180, background: "linear-gradient(to bottom, var(--red), rgba(232,0,29,0.2))", borderRadius: 4, flexShrink: 0, marginTop: 4 }} />
           <div>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 6.5vw, 84px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.04em", color: "var(--foreground)", margin: 0 }}>
-              Your data doesn&apos;t
-              <br />
-              belong to{" "}
-              <span style={{ color: "var(--red)" }}>Big Tech.</span>
+              Your data stays{" "}
+              <span style={{ color: "var(--red)" }}>yours.</span>
             </h1>
 
             <p style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "var(--muted)", lineHeight: 1.7, maxWidth: 560, marginTop: 28, fontFamily: "var(--font-sans)", fontWeight: 400 }}>

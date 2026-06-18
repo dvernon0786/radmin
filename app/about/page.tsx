@@ -59,8 +59,8 @@ const VALUES = [
 const TEAM = [
   {
     name: "Ammar",
-    title: "Founder & Infrastructure Lead",
-    bio: "10+ years in open-source infrastructure and data sovereignty advocacy. Previously contributed to Nextcloud core and worked inside enterprise tech companies. Now exclusively focused on helping institutions escape Big Tech dependency.",
+    title: "Infrastructure Lead",
+    bio: "10+ years in open-source infrastructure and data sovereignty advocacy. Previously contributed to Nextcloud core and worked inside enterprise tech companies. Specialises in helping institutions transition to sovereign, open-source infrastructure.",
     initials: "A",
     color: "var(--navy)",
     email: "ammar@radmin.live",
@@ -99,8 +99,11 @@ export default function AboutPage() {
               <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.8, fontFamily: "var(--font-sans)", marginBottom: 24 }}>
                 Open-source alternatives are mature, capable, and often better. The barrier isn&apos;t software quality — it&apos;s operational capacity. Most institutions don&apos;t have the in-house expertise to deploy and maintain their own infrastructure.
               </p>
-              <p style={{ fontSize: 17, color: "var(--foreground)", lineHeight: 1.8, fontFamily: "var(--font-sans)", fontWeight: 500, margin: 0 }}>
+              <p style={{ fontSize: 17, color: "var(--foreground)", lineHeight: 1.8, fontFamily: "var(--font-sans)", fontWeight: 500, marginBottom: 24 }}>
                 That&apos;s the gap Radmin fills: we take on the operational burden so institutions can benefit from open-source software without the overhead of running it themselves.
+              </p>
+              <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.8, fontFamily: "var(--font-sans)", margin: 0 }}>
+                We&apos;re also active contributors to Co-op Cloud, a free and open-source project that makes it easier for cooperatives and small organisations to deploy and maintain open-source infrastructure. Our contributions help strengthen the ecosystem we depend on.
               </p>
             </div>
           </div>

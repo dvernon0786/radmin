@@ -28,15 +28,16 @@ serving NGOs, non-profits, and municipal governments.
 ├── components/
 │   ├── Navbar.tsx       # Fixed nav, pathname-based active highlight, mobile drawer
 │   ├── Hero.tsx         # Full-height hero with stats bar
-│   ├── Services.tsx     # Nextcloud, Vaultwarden, Custom deployment cards
+│   ├── Services.tsx     # Nextcloud, Vaultwarden, OpenDesk, Custom deployment cards (2x2 grid)
+│   ├── BespokeSkills.tsx # 6 specialist capability cards (infra, migration, security, training, consulting, integration)
 │   ├── HowItWorks.tsx   # 3 service tiers (hosted / self-hosted / consulting)
 │   ├── WhoWeServe.tsx   # Client segments: govts, NGOs, orgs in transition
 │   ├── WhyRadmin.tsx    # Dark section, sticky left panel, differentiators
 │   ├── Testimonials.tsx # 3 testimonial cards with star ratings
 │   ├── Contact.tsx      # Contact form (mailto fallback) + contact info
-│   └── Footer.tsx       # Nav links, legal links, brand
+│   └── Footer.tsx       # Nav links, legal links, Gitea placeholder, brand
 ├── lib/
-│   ├── services-data.ts      # SERVICES array (name, features, useCases, longDescription)
+│   ├── services-data.ts      # SERVICES array: Nextcloud, Vaultwarden, OpenDesk, Custom deployment
 │   ├── tiers-data.ts         # TIERS, INCLUDED, PRICING_FAQ arrays
 │   └── testimonials-data.ts  # TESTIMONIALS array (with challenge, solution, metrics)
 └── public/

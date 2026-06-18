@@ -50,8 +50,8 @@ export default function Footer() {
             © {year} Radmin · radmin.live · All rights reserved
           </p>
           <div style={{ display: "flex", gap: 20 }}>
-            {[{ label: "Privacy policy", href: "#" }, { label: "Terms of service", href: "#" }].map((l) => (
-              <a key={l.label} href={l.href} style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", textDecoration: "none", fontFamily: "var(--font-sans)", transition: "color var(--transition-fast)" }}
+            {[{ label: "Privacy policy", href: "#" }, { label: "Terms of service", href: "#" }, { label: "Source code", href: "#", external: true as const }].map((l) => (
+              <a key={l.label} href={l.href} {...("external" in l ? { target: "_blank", rel: "noopener noreferrer" } : {})} style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", textDecoration: "none", fontFamily: "var(--font-sans)", transition: "color var(--transition-fast)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.3)")}>
                 {l.label}
